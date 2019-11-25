@@ -1,0 +1,126 @@
+/* ================================================================================================================ */
+/* for mobile */
+@media only screen and (max-width: 600px) {
+  .loader {
+    margin-top: 40vh;
+  }
+  .addPostForMoblie {
+    width: 100vw;
+    height: 40px;
+    background-color: rgb(75, 112, 100);
+  }
+  .positionAbsolute {
+    position: fixed;
+  }
+  .divIconPlusForMobile {
+    width: 25vw;
+    margin: 0 auto;
+  }
+  .iconPlusForMobile {
+    color: white;
+    padding-left: 33%;
+    font-size: 3rem;
+    margin-top: 5px;
+  }
+  .divMainPosts {
+    margin-top: 6rem;
+    margin-bottom: 5rem;
+  }
+  .divMainPersomPost {
+    width: 100vw;
+    clear: both;
+  }
+  .divImagePesonPost {
+    float: left;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid rgb(202, 202, 202);
+    margin: 0px 10px;
+  }
+  .imagePersonPost {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+  .personIcon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 3rem;
+    margin: 3px 5px 0px 5px;
+  }
+  .divNamePersonPost {
+    height: 40px;
+    margin: 0px 10px;
+    float: left;
+    min-width: 60vw;
+  }
+  .namePerson {
+    padding: 10px 0px 0px 0px;
+    font-weight: bold;
+    font-size:14px;
+  }
+  .divMoreInfoPersonP {
+  }
+  .iconMoreInfo {
+    font-size: 1.6rem;
+    padding: 13px 20px;
+  }
+  .imagePost {
+    width: 100vw;
+  }
+  .divIngrdiet{
+    float: left;
+    max-width:90vw;
+  }
+  .row {
+    flex-direction: row-reverse;
+  }
+  .divIcons {
+    width:33vw;
+    float: left;
+    height:50px;
+  }
+  .icons{
+    font-size:2.5rem;
+    margin-left: 40%;
+  }
+  .color-graay{
+    color: rgb(102, 102, 102);
+  }
+  .font-normal {
+    font-size: 16px;
+  }
+  .underline {
+    text-decoration: underline;
+  }
+  .rtl {
+    float: right !important;
+  }
+
+  .spicePosts {
+    clear: both;
+    width: 100vw;
+    height: 10px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.09), 0 10px 0 rgba(0, 0, 0, 0.1);
+  }
+  .styleLikeUser{
+    color:  green;
+  }
+  .displayNone{
+    display: none;
+  }
+}
+
+/* ================================================================================================================ */
+
+/* for computer */
+@media screen and (min-width: 600px) {
+  .addPostForMoblie {
+    display: none;
+  }
+  .mainDivForMobile {
+    display: none;
+  }
+}

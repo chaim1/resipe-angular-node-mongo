@@ -1,0 +1,264 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+/* for mobile */
+@media only screen and (max-width: 600px) {
+  header {
+    height: 5rem;
+    width: 100%;
+    background-color: rgb(75, 112, 100);
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+  }
+  main {
+    margin-top: 5rem;
+  }
+  .logo_header_div {
+    display: none;
+  }
+  .div-icon-mobile {
+    width: 20%;
+    height: 4.8rem;
+  }
+  .rtl{
+    float: right;
+  }
+  .ltr{
+    float: left;
+  }
+  .active {
+    border-bottom: solid 1.5px white;
+    background-color: rgb(85, 128, 114);
+  }
+  .icon-mobile {
+    margin: 13px 0px 0px 28px;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+  }
+
+  .main-post-div {
+    margin: 1px 0 5px 2px;
+    width: 98vw;
+    border: 0.1px solid rgb(158, 158, 158);
+    padding: 1px;
+    box-shadow: 2px 2px 10px #888888;
+  }
+  .main-post-person-div {
+    height: 70px;
+    width: 99%;
+    margin: 3px auto;
+    background-color: rgb(239, 250, 244);
+  }
+  .div-name-person {
+    display: inline;
+    float: right;
+    padding-right: 20%;
+    margin-top: 20px;
+  }
+  .div-icon-person {
+    float: left;
+  }
+  .div-img-person {
+  }
+  .name-person {
+    display: flex;
+    margin: 0px 0px 0px 30%;
+    font-size: 1.5rem;
+    direction: rtl;
+  }
+  .point {
+    margin-top: 28px;
+    margin-left: 10px;
+    font-size: 15px;
+    color: gray;
+  }
+  .img-post-person {
+    display: inline;
+    margin: -40px 0px 0px 85%;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+  }
+  .main-post-img-div {
+    width: 90vw;
+    /* border-top: solid rgb(202, 197, 197) 0.5px; */
+    /* border-bottom: solid rgb(202, 197, 197) 0.1px; */
+  }
+  .img-post-post {
+    margin-left: 8px;
+    width: 94vw;
+  }
+  .main-name-recipe {
+  }
+  .name-recipe {
+    padding-top: 20px;
+    text-align: center;
+    font-size: 20px;
+  }
+  hr {
+    border: 0;
+    border-top: 1px solid #eee;
+    width: 95%;
+    margin: 10px;
+  }
+  .ingrident {
+    width: 48%;
+    display: inline-block;
+    font-size: 15px;
+    margin: 5px 0;
+  }
+  .div-main-ingredient {
+    padding-left: 50px;
+  }
+  .read-more-state {
+    display: none;
+  }
+
+  .read-more-target {
+    opacity: 0;
+    max-height: 0;
+    font-size: 0;
+    transition: 0.25s ease;
+  }
+  .read-more-wrap {
+    font-size: 2rem;
+    padding: 5px;
+  }
+  .read-more-state:checked ~ .read-more-wrap .read-more-target {
+    opacity: 1;
+    font-size: inherit;
+    max-height: 999em;
+  }
+
+  .read-more-state ~ .read-more-trigger:before {
+    content: "Show more";
+  }
+
+  .read-more-state:checked ~ .read-more-trigger:before {
+    content: "Show less";
+  }
+
+  .read-more-trigger {
+    cursor: pointer;
+    display: inline-block;
+    padding: 0 0.5em;
+    color: #666;
+    font-size: 0.9em;
+    line-height: 2;
+    border: 1px solid #ddd;
+    border-radius: 0.25em;
+  }
+  .num-likes {
+    display: inline;
+    font-size: 17px;
+    color: #666565;
+  }
+  .likes {
+    font-size: 17px;
+    color: #666;
+  }
+  .div-likes {
+  }
+  .Comments-div-main {
+    float: left;
+    width: 85%;
+  }
+  .comments {
+    margin-left: 10px;
+    font-size: 17px;
+    color: #666;
+  }
+  .div-comments-like {
+    margin-top: 10px;
+  }
+  .person-like-save-div {
+    height: 40px;
+  }
+  .person-save {
+    margin-left: 40px;
+    display: inline-block;
+    width: 20%;
+    font-size: 17px;
+    color: #666;
+  }
+  .person-like {
+    width: 20%;
+    margin-left: 40px;
+    display: inline-block;
+    font-size: 17px;
+    color: #666;
+  }
+  .person-comment{
+    width: 20%;
+    margin-left: 40px;
+    display: inline-block;
+    font-size: 17px;
+    color: #666;
+  }
+  footer {
+    margin-top: 43px;
+  }
+  .footer-div {
+    width: 100vw;
+    height: 50px;
+    background-color: darkslategray;
+    overflow: hidden;
+    position: fixed;
+    top: 94vh;
+  }
+  .footer-icon {
+    font-size: 30px;
+    color: white;
+    margin-left: 45%;
+    margin-top: 2px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+/* for computer */
+@media screen and (min-width: 600px) {
+
+  header {
+    height: 5rem;
+    width: 100%;
+    background-color:  rgb(75, 112, 100);;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+  }
+  main {
+    margin-top: 5rem;
+  }
+  .logo_header_div_pc {
+    width: 70%;
+    overflow: hidden;
+  }
+  .logo_img_header_pc {
+    float: right;
+    height: 4.8rem;
+    border-radius: 1px;
+    margin: 1px 25% 0 0;
+  }
+  .icons-header-for-mobile {
+    display: none;
+  }
+
+}

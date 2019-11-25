@@ -1,0 +1,310 @@
+/* global style */
+.aPoynter {
+  cursor: pointer;
+}
+.pPoynter {
+  color: #3285d3;
+}
+body {
+  min-height: 100vh;
+  background-color: rgb(251, 255, 250);
+}
+.rtl {
+  text-align: right;
+}
+
+/* ================================================================================================================ */
+/* for mobile */
+@media only screen and (max-width: 600px) {
+  .main-div-auth {
+  }
+  .box-auth {
+    margin-bottom: 30px;
+  }
+  .header-auth {
+    text-align: center;
+  }
+  .form-auth {
+    text-align: center;
+  }
+  .input-auth {
+    width: 85%;
+    background-color: rgb(253, 253, 253);
+    padding: 8px 10px;
+    margin: 3px 0;
+    box-sizing: border-box;
+    border-radius: 3px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(223, 222, 222);
+    border-image: initial;
+  }
+  .input-auth:focus {
+    background-color: rgb(255, 255, 255);
+    border-radius: 3px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(172, 172, 172);
+    border-image: initial;
+  }
+  input.ng-invalid.ng-touched {
+    border: 1px solid red;
+  }
+  .button-auth {
+    margin-top: 10px;
+    width: 85%;
+    border-radius: 3px;
+    color: rgb(255, 255, 255);
+    background-color: #3897f0;
+    border: #3897f0;
+    height: 30px;
+  }
+  hr {
+    width: 75%;
+    margin: 30px 0 0 13%;
+  }
+  .fontSize {
+    font-size: 1.5rem;
+  }
+  .div-text {
+    width: 80%;
+    margin: auto;
+    margin-top: 0px !important;
+    margin-bottom: 20px !important;
+  }
+  .text-follw {
+    color: rgb(139, 139, 139);
+    text-align: center;
+    font-size: 1.4rem;
+    overflow-wrap: break-word;
+  }
+  .addImageUser {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.2);
+    position: fixed;
+  }
+
+  .fade-in {
+    animation: fadeIn ease 1s;
+    -webkit-animation: fadeIn ease 1s;
+    -moz-animation: fadeIn ease 1s;
+    -o-animation: fadeIn ease 1s;
+    -ms-animation: fadeIn ease 1s;
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  @-moz-keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  @-webkit-keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  @-o-keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  @-ms-keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  /* The style below is just for the appearance of the example div */
+
+  .style {
+    position: fixed;
+    top: 30vh;
+    width: 74vw;
+    height: 30vh;
+    text-align: center;
+    margin-left: 5vw;
+    border: 4px double rgb(210, 243, 201);
+    background-color: rgb(251, 255, 250);
+  }
+  .style p {
+    color: #fff;
+    font-size: 50px;
+  }
+  .image-preview {
+    display: inline;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+  }
+}
+
+/* ================================================================================================================ */
+
+/* for computer */
+@media screen and (min-width: 600px) {
+  .main-div-auth {
+    padding: 30px ;
+  }
+  .box-auth {
+    background-color: white;
+    border: 1px solid gainsboro;
+    width: 350px;
+    margin: 0 auto;
+  }
+  /* .box-auth-image {
+    width: 350px;
+    margin: 0 auto;
+  } */
+  .header-auth {
+    text-align: center;
+  }
+  .form-auth {
+    text-align: center;
+  }
+  .input-auth {
+    width: 80%;
+    background-color: rgb(253, 253, 253);
+    padding: 8px 10px;
+    margin: 3px 0;
+    box-sizing: border-box;
+    border-radius: 3px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(223, 222, 222);
+    border-image: initial;
+  }
+  .input-auth:focus {
+    background-color: rgb(255, 255, 255);
+    border-radius: 3px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(172, 172, 172);
+    border-image: initial;
+  }
+  input.ng-invalid.ng-touched {
+    border: 1px solid red;
+  }
+  .button-auth {
+    margin-top: 10px;
+    width: 80%;
+    border-radius: 3px;
+    color: rgb(255, 255, 255);
+    background-color: #3897f0;
+    border: #3897f0;
+    height: 25px;
+  }
+  hr {
+    width: 75%;
+    margin: 20px 0 0 33px;
+  }
+  .div-text {
+    width: 80%;
+    margin: auto;
+    margin-bottom: 20px !important;
+  }
+  .text-follw {
+    color: rgb(139, 139, 139);
+    text-align: center;
+    font-size: 1.4rem;
+    overflow-wrap: break-word;
+  }
+
+  .fade-in {
+    animation: fadeIn ease 1s;
+    -webkit-animation: fadeIn ease 1s;
+    -moz-animation: fadeIn ease 1s;
+    -o-animation: fadeIn ease 1s;
+    -ms-animation: fadeIn ease 1s;
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  @-moz-keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  @-webkit-keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  @-o-keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  @-ms-keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  /* The style below is just for the appearance of the example div */
+
+  .style {
+    position: fixed;
+    top: 30vh;
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    margin: auto -66px;
+    margin-top: 100px;
+  }
+  .style p {
+    color: #fff;
+    font-size: 50px;
+  }
+  .image-preview {
+    display: inline;
+    width: 100px;
+    height: 100px;
+    border-radius: 25px;
+  }
+}

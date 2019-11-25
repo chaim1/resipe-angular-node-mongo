@@ -1,0 +1,186 @@
+
+
+
+
+
+
+
+
+
+/* ================================================================================================================ */
+/* for mobile */
+@media only screen and (max-width: 600px) {
+  .mainDivForPc{
+    display: none;
+  }
+  .divForMobile{
+    min-height: 100vh;
+    background-color: rgb(248, 255, 253);
+  }
+  .divHeaderForMobile{
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: 1;
+    height: 5.2rem;
+    background-color: rgb(245, 253, 251);
+    border-bottom: 1.5px solid rgb(233, 233, 233);
+  }
+  .divButtonCancelForMobile{
+    width: 20vw;
+  }
+  .cancelHeaderMobile{
+    font-size: 2rem;
+    margin: 1.8rem 2rem 0rem 3rem;
+  }
+  .cancelHeaderMobileRtr{
+    margin: 1.8rem 2rem 0px 4rem;
+  }
+  .divContentHeaderForMobile{
+    width: 60vw;
+  }
+  .contentHeaderMobile{
+    margin-top: 1.2rem;
+    text-align: center;
+  }
+  .divNextForMobile{
+    width: 20vw;
+    color: rgb(75, 112, 100);
+  }
+  .backHeaderMobile{
+    margin-top: 1.2rem;
+    margin-left: 1rem;
+    color: rgb(75, 112, 100);
+  }
+  .contentNextHeaderMobile{
+    margin-top: 1.2rem;
+    text-align: center;
+  }
+  .ltr{
+    float: left;
+  }
+  .rtl{
+    float: right !important;
+  }
+  .divMainNewPost{
+    /* margin-top: 10px; */
+  }
+  .imagePost{
+    width: 100%;
+  }
+  .divImagePost{
+    margin-top: 5.2rem;
+    width: 100vw;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
+
+  }
+  .divMainIngredients{
+    margin-top: 5.2rem;
+  }
+  .divImageForTitle{
+    display: inline-block;
+    width: 100px;
+    height: 80px;
+  }
+  .divInputForTitleMobile{
+    margin: 0 auto;
+  }
+  .divTitlePost{
+    width: 100vw;
+    height: 80px;
+    background-color: rgb(248, 255, 253);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
+  }
+  .fontForMobile{
+    font-size: 16px;
+  }
+  .imageForTitle{
+    vertical-align: middle;
+    width: 50%;
+    height: 50%;
+    border-radius: 1px;
+    margin: 20px 25px 0px 25px;
+  }
+  .inputTitle{
+    width: 60vw;
+    height: 70px;
+    background-color: rgb(248, 255, 253);
+    margin: 0 auto;
+    border: 0px solid;
+    font-size: 1.6rem;
+  }
+  .inputTitle::placeholder {
+    color: rgb(160, 160, 160);
+    opacity: 1;
+  }
+  .redColorW::placeholder {
+    color: red;
+    opacity: 1;
+  }
+  .redColorIngredient{
+    color: red !important;
+  }
+  .placeholderLtr{
+    text-align: right;
+  }
+  .divPlusIngredient{
+    margin-left: 46.5%;
+  }
+  .plusIngredient{
+    font-size: 3rem;
+    color: rgb(133, 133, 133);
+  }
+  textarea#textareaMobile {
+    margin-top: 2rem;
+    margin-left: 0.5vw;
+    width: 99vw;
+    height: 50vh;
+    padding: 5px;
+    font-size: 16px;
+    font-family: Tahoma, sans-serif;
+    background-position: bottom right;
+    background-repeat: no-repeat;
+  }
+  .tBorderGreey{
+    border: 3px solid #cccccc;
+  }
+  .tBorderRed{
+    border: 1px solid #ff7d7d !important;
+  }
+  .divTitleForInstructions{
+    margin-top: 5.2rem;
+  }
+.tilteInstructions{
+  padding-top: 2rem;
+}
+  .divLoader{
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(75, 112, 100,0.1);
+  }
+  .loader{
+    margin-top: 45vh !important;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ================================================================================================================ */
+
+/* for computer */
+@media screen and (min-width: 600px) {
+  .divForMobile{
+    display: none;
+  }
+}

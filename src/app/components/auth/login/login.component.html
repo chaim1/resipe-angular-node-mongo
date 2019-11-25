@@ -1,0 +1,107 @@
+<body class="p-5">
+  <div class="main-div-auth">
+    <div class="box-auth pt-2">
+      <app-header-auth class="header-auth"></app-header-auth>
+      <form
+        [formGroup]="loginForm"
+        (ngSubmit)="onLoginForm()"
+        class="form-auth"
+      >
+        <div class="div-input-auth">
+          <input
+            [ngClass]="{
+              rtl: wordsCantent.ContentLoginRegister.direction == 'rtl'
+            }"
+            class="input-auth fontSize"
+            type="text"
+            id="usernameOrEmail"
+            formControlName="userNameOrEmailLogin"
+            [placeholder]="wordsCantent.PlaceHoldersLogin.EmailOrUsername"
+            required
+          /><br />
+          <small
+            *ngIf="
+              !loginForm.get('userNameOrEmailLogin').valid &&
+              loginForm.get('userNameOrEmailLogin').touched
+            "
+            id="userDanger"
+            class="text-danger"
+          >
+            {{ wordsCantent.ContentLoginRegister.RequiredField }}
+          </small>
+        </div>
+        <div>
+          <input
+            [ngClass]="{
+              rtl: wordsCantent.ContentLoginRegister.direction == 'rtl'
+            }"
+            class="input-auth fontSize"
+            type="password"
+            id="password"
+            formControlName="password"
+            [placeholder]="wordsCantent.PlaceHoldersLogin.Password"
+            required
+          />
+          <br />
+          <small
+            *ngIf="
+              !loginForm.get('password').valid &&
+              loginForm.get('password').touched
+            "
+            id="userDanger"
+            class="text-danger"
+          >
+            {{ wordsCantent.ContentLoginRegister.RequiredField }}
+          </small>
+        </div>
+        <div *ngIf="!loader">
+          <button
+            [disabled]="!loginForm.valid"
+            [ngStyle]="{
+              'background-color': !loginForm.valid
+                ? 'rgb(132, 173, 235)'
+                : '#3897f0'
+            }"
+            class="button-auth fontSize"
+            class="button-auth fontSize"
+          >
+            {{ wordsCantent.ContentLoginRegister.ButtonRegister }}
+          </button>
+        </div>
+        <div *ngIf="loader">
+          <app-loader></app-loader>
+        </div>
+        <div *ngIf="authField">
+          <br />
+          <small id="" class="text-danger"> {{ massageForUser }} </small>
+        </div>
+        <hr />
+        <div class="p-4">
+          <a class="aPoynter fontSize"
+            ><p class="pPoynter">
+              {{ wordsCantent.ContentLoginRegister.ForgotPassword }}
+            </p></a
+          >
+        </div>
+      </form>
+    </div>
+    <div class="box-auth mt-3 p-2">
+      <p class="text-center p-2 m-2 fontSize">
+        {{ wordsCantent.ContentLoginRegister.DoNotHaveAnAccountLogin }}
+        <a [routerLink]="['/register']">{{
+          wordsCantent.ContentLoginRegister.ButoonRegister
+        }}</a>
+      </p>
+    </div>
+    <div class="box-auth mt-3 p-2">
+      <p class="text-center p-2 m-2 fontSize">
+        {{ wordsCantent.ContentLoginRegister.ToViewWithoutRegistration }}
+        <a [routerLink]="['/register']">
+          {{ wordsCantent.ContentLoginRegister.ButtonClicHere }}
+        </a>
+      </p>
+    </div>
+
+    <app-footer-auth></app-footer-auth>
+  </div>
+</body>

@@ -1,0 +1,218 @@
+<div class="divForMobile">
+  <form [formGroup]="fromData">
+    <div *ngIf="viewImage">
+      <div class="divHeaderForMobile">
+        <div
+          [ngClass]="{
+            rtl: contentWords.ContentLoginRegister.direction == 'rtl'
+          }"
+          class="divButtonCancelForMobile ltr"
+        >
+          <i (click)="cancel()" class="cancelHeaderMobile fas fa-times"></i>
+        </div>
+        <div
+          [ngClass]="{
+            rtl: contentWords.ContentLoginRegister.direction == 'rtl'
+          }"
+          class="divContentHeaderForMobile ltr"
+        >
+          <h1 class="contentHeaderMobile">
+            {{ contentWords.newPost.headerImg }}
+          </h1>
+        </div>
+        <div
+          [ngClass]="{
+            rtl: contentWords.ContentLoginRegister.direction == 'rtl'
+          }"
+          class="divNextForMobile ltr"
+        >
+          <h1 (click)="onNextPhoto()" class="contentNextHeaderMobile">
+            {{ contentWords.newPost.next }}
+          </h1>
+        </div>
+      </div>
+      <div class="divMainNewPost">
+        <div class="divImagePost" *ngIf="imagePreview">
+          <img class="imagePost" [src]="imagePreview" alt="" />
+        </div>
+      </div>
+    </div>
+    <!-- =================================================================================== -->
+    <div *ngIf="viewIngredients">
+      <div *ngIf="!viewImage">
+        <div class="divHeaderForMobile">
+          <div
+            [ngClass]="{
+              rtl: contentWords.ContentLoginRegister.direction == 'rtl'
+            }"
+            class="divButtonCancelForMobile ltr"
+          >
+            <!-- <i (click)="cancel()" class="cancelHeaderMobile fas fa-times"></i> -->
+            <h1 class="backHeaderMobile" (click)="backToImage()">
+              {{ contentWords.newPost.back }}
+            </h1>
+          </div>
+          <div
+            [ngClass]="{
+              rtl: contentWords.ContentLoginRegister.direction == 'rtl'
+            }"
+            class="divContentHeaderForMobile ltr"
+          >
+            <h1 class="contentHeaderMobile">
+              {{ contentWords.newPost.headerIngredients }}
+            </h1>
+          </div>
+          <div
+            [ngClass]="{
+              rtl: contentWords.ContentLoginRegister.direction == 'rtl'
+            }"
+            class="divNextForMobile ltr"
+          >
+            <h1 (click)="onNextIngredients()" class="contentNextHeaderMobile">
+              {{ contentWords.newPost.next }}
+            </h1>
+          </div>
+        </div>
+        <div class="divMainIngredients">
+          <div class="divTitlePost">
+            <div
+              class="divImageForTitle rtl"
+              [ngClass]="{
+                ltr: contentWords.ContentLoginRegister.direction == 'ltr'
+              }"
+            >
+              <img class="imageForTitle" [src]="imagePreview" alt="" />
+            </div>
+            <div
+              class="divInputForTitleMobile rtl"
+              [ngClass]="{
+                ltr: contentWords.ContentLoginRegister.direction == 'ltr'
+              }"
+            >
+              <input
+                formControlName="postTitle"
+                class="inputTitle"
+                type="text"
+                [placeholder]="contentWords.newPost.nameRecipe"
+                [ngClass]="{
+                  placeholderLtr:
+                    contentWords.ContentLoginRegister.direction == 'rtl',
+                  redColorW: redColor
+                }"
+              />
+            </div>
+          </div>
+          <div class="mainDivIngredients">
+            <h3 class="text-center mt-4">
+              {{ contentWords.newPost.headerIngredients }}
+            </h3>
+            <hr
+              style="width: 70vw; margin: 0 auto; border: 0;
+            height: 0.7px;
+            background-image: linear-gradient(to right, rgba(50, 50, 50, 0), rgba(50, 50, 50, 0.50), rgba(50, 50, 50, 0)); "
+              class="mb-4 text-center"
+            />
+            <div formArrayName="ingredients">
+              <div
+                *ngFor="
+                  let IngredientControl of fromData.controls['ingredients']
+                    .controls;
+                  let i = index
+                "
+              >
+                <div class="input-group mb-4  ">
+                  <div
+                    (click)="removeIngredient(i)"
+                    class="input-group-prepend ml-4"
+                  >
+                    <span class="input-group-text" id="basic-addon1"
+                      ><i class="fas fa-times"></i
+                    ></span>
+                  </div>
+                  <input
+                  class="fontForMobile"
+                    type="text"
+                    class="form-control mr-4"
+                    [formControlName]="i"
+                    aria-describedby="basic-addon1"
+                  />
+                </div>
+              </div>
+
+              <div
+                class="divPlusIngredient"
+                (click)="onAddIngredients()"
+              >
+                <i [ngClass]="{
+                  redColorIngredient : ingredientValid
+                }" class="plusIngredient far fa-plus-square"></i>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ============================================================================= -->
+    <div *ngIf="viewInstructions">
+      <div *ngIf="!viewIngredients">
+        <div class="divHeaderForMobile">
+          <div
+            [ngClass]="{
+              rtl: contentWords.ContentLoginRegister.direction == 'rtl'
+            }"
+            class="divButtonCancelForMobile ltr"
+          >
+            <h1 (click)="backToIngredients()" class="backHeaderMobile">
+              {{ contentWords.newPost.back }}
+            </h1>
+          </div>
+          <div
+            [ngClass]="{
+              rtl: contentWords.ContentLoginRegister.direction == 'rtl'
+            }"
+            class="divContentHeaderForMobile ltr"
+          >
+            <h1 class="contentHeaderMobile">
+              {{ contentWords.newPost.headerInstructions }}
+            </h1>
+          </div>
+          <div
+            [ngClass]="{
+              rtl: contentWords.ContentLoginRegister.direction == 'rtl'
+            }"
+            class="divNextForMobile ltr"
+          >
+            <h1 (click)="sharePost()" class="contentNextHeaderMobile">
+              {{ contentWords.newPost.share }}
+            </h1>
+          </div>
+        </div>
+        <div class="divTitleForInstructions">
+          <h3 class="tilteInstructions text-center">
+            {{fromData.get('postTitle').value}}
+          </h3>
+          <hr
+          style="width: 70vw; margin: 0 auto; border: 0;
+        height: 0.7px;
+        background-image: linear-gradient(to right, rgba(50, 50, 50, 0), rgba(50, 50, 50, 0.50), rgba(50, 50, 50, 0)); "
+          class="mb-4 text-center"
+        />        </div>
+        <div class="">
+          <textarea [ngClass]="{tBorderRed: InstructionsValid} " formControlName="Instructions" name="" id="textareaMobile" cols="30" rows="10"></textarea>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="loader">
+      <div class="divLoader">
+        <div class="loader">
+          <app-loader></app-loader>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+<!-- ===================================================================================================== -->
+
+<div class="mainDivForPc"></div>

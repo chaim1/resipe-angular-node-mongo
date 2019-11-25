@@ -1,0 +1,154 @@
+<app-header></app-header>
+<div *ngIf="loader" class="div-main-loader">
+  <div class="loader">
+    <app-loader></app-loader>
+  </div>
+</div>
+<div *ngIf="!loader">
+  <div class="main-div-follow">
+    <div *ngFor="let perosn of peopleFollow let i = index" >
+      <div
+      *ngIf="!checkIfFollow(perosn.userFollow)"
+       class="div-person-follow">
+        <div
+          [ngClass]="{
+            ltr: dataContent.ContentLoginRegister.direction == 'ltr'
+          }"
+          *ngIf="perosn.imageUser"
+          class="rtl"
+        >
+          <a (click)="onClickImageUser(perosn.imageUser)">
+            <img class="img-person-follow" [src]="perosn.imageUser" alt=""
+          /></a>
+        </div>
+        <div
+          [ngClass]="{
+            ltr: dataContent.ContentLoginRegister.direction == 'ltr'
+          }"
+          *ngIf="!perosn.imageUser"
+          class="person-icon-div rtl"
+        >
+          <a>
+            <i
+              [ngStyle]="{ color: 'rgb(139, 139, 139)' }"
+              class="icon-person img-person-follow far fa-user"
+            ></i
+          ></a>
+        </div>
+        <div
+
+          [ngClass]="{
+            ltr: dataContent.ContentLoginRegister.direction == 'ltr'
+          }"
+          class="div-name-person rtl"
+        >
+          <p class="name-person" [routerLink]="['/']">
+            {{ perosn.fullName ? perosn.fullName : perosn.userName }}
+          </p>
+        </div>
+        <div *ngIf="!checkIfFollow(perosn.userFollow)">
+          <div [id]="perosn.idUser">
+            <div
+              [ngClass]="{
+                ltr: dataContent.ContentLoginRegister.direction == 'ltr'
+              }"
+              [ngClass]="{
+                iconFollowLtr:
+                  dataContent.ContentLoginRegister.direction == 'ltr'
+              }"
+              [ngStyle]="{
+                float:
+                  dataContent.ContentLoginRegister.direction == 'ltr'
+                    ? 'right'
+                    : left
+              }"
+              class="iconFollowRtl"
+              (click)="onFollowFerson(perosn.idUser, perosn._id)"
+            >
+              <i
+                [id]="perosn.idUser"
+                class="iconsFontsPlus fas fa-user-plus"
+              ></i>
+              </div>
+          </div>
+          <div [id]="perosn._id" class="fade-in display">
+            <div
+              [ngClass]="{
+                ltr: dataContent.ContentLoginRegister.direction == 'ltr'
+              }"
+              [ngClass]="{
+                iconFollowLtr:
+                  dataContent.ContentLoginRegister.direction == 'ltr'
+              }"
+              [ngStyle]="{
+                float:
+                  dataContent.ContentLoginRegister.direction == 'ltr'
+                    ? 'right'
+                    : left
+              }"
+              class="iconFollowRtl"
+              (click)="UnFollowFerson(perosn.idUser, perosn._id)"
+            >
+              <i class=" iconsFontsV fas fa-user-check"></i>
+            </div>
+          </div>
+        </div>
+        <!--
+      <div *ngIf="checkIfFollow(perosn.userFollow)">
+        <div class="display" [id]="perosn.idUser">
+          <button
+            [ngClass]="{
+              ltr: dataContent.ContentLoginRegister.direction == 'ltr'
+            }"
+            [ngClass]="{
+              iconFollowLtr: dataContent.ContentLoginRegister.direction == 'ltr'
+            }"
+            [ngStyle]="{
+              float:
+                dataContent.ContentLoginRegister.direction == 'ltr'
+                  ? 'right'
+                  : left
+            }"
+            class="iconFollowRtl"
+            (click)="onFollowFerson(perosn.idUser, perosn._id)"
+          >
+            <i [id]="perosn.idUser" class="iconsFontsPlus fas fa-user-plus"></i>
+          </button>
+        </div>
+        <div [id]="perosn._id" class="fade-in">
+          <button
+            [ngClass]="{
+              ltr: dataContent.ContentLoginRegister.direction == 'ltr'
+            }"
+            [ngClass]="{
+              iconFollowLtr: dataContent.ContentLoginRegister.direction == 'ltr'
+            }"
+            [ngStyle]="{
+              float:
+                dataContent.ContentLoginRegister.direction == 'ltr'
+                  ? 'right'
+                  : left
+            }"
+            class="iconFollowRtl"
+            (click)="UnFollowFerson(perosn.idUser, perosn._id)"
+          >
+            <i class=" iconsFontsV fas fa-user-check"></i>
+          </button>
+        </div>
+      </div> -->
+      </div>
+    </div>
+    <div class="divLoaderMoreResult" *ngIf="loadMoreResult">
+      <app-loader ></app-loader>
+    </div>
+    <div *ngIf="endResult">
+      <p class="text-center">No more result</p>
+    </div>
+  </div>
+  <a (click)="closeViewImage()">
+    <div *ngIf="imageUserView" class="divImageView">
+      <p (click)="closeViewImage()"><i class="far fa-times-circle"></i></p>
+      <img id="imageGrow" class="inageView" [src]="imageView" alt="" />
+    </div>
+  </a>
+</div>

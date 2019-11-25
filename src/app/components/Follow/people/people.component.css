@@ -1,0 +1,422 @@
+/* global style */
+/* .aPoynter {
+  cursor: pointer;
+}
+.pPoynter {
+  color: #3285d3;
+}
+body {
+  height: 100vh;
+  background-color: rgb(251, 255, 250);
+}
+.rtl {
+  text-align: right;
+} */
+
+/* ============================================================================================================== */
+
+/* for mobile */
+@media only screen and (max-width: 600px) {
+  .div-main-loader {
+    position: fixed;
+    top: 5rem;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(251, 255, 250);
+  }
+  .loader {
+    margin-top: 30vh !important;
+  }
+  .iconsFontsPlus {
+    background-color: white;
+    color: rgb(75, 112, 100);
+    font-size: 3rem;
+    -webkit-transition: color 1s, font-size 1s;
+    -moz-transition: color 1s, font-size 1s;
+    -o-transition: color 1s, font-size 1s;
+    transition: color 1s, font-size 1s;
+  }
+  .iconsFontsPlus:hover {
+    color: rgb(118, 155, 143);
+    font-size: 4rem;
+  }
+  .iconsFontsV {
+    color: rgb(52, 66, 255);
+    font-size: 3rem;
+  }
+
+  .main-div-follow {
+    background-color: rgb(251, 255, 250);
+    height: 100vh;
+    width: 100vw;
+    margin-top: 6rem;
+  }
+  .rtl {
+    float: right;
+  }
+  .ltr {
+    float: left;
+  }
+  .div-person-follow {
+    width: 95vw;
+    margin: 0 auto;
+    min-height: 70px;
+    background-color: white;
+    border: 0.5px solid rgb(241, 250, 238);
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 0.5px 4px 0 rgba(0, 0, 0, 0.1);
+  }
+  .img-person-follow {
+    margin: 20% 10px 0 10px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    height: 42px;
+    border-radius: 40px;
+    overflow: hidden;
+    object-fit: inherit;
+    width: inherit;
+    /* border-color: rgba(0, 0, 0, 0.05098); */
+    border-width: 1px;
+    border-style: solid;
+    padding: 0;
+    /* background-color: rgba(0, 0, 0, 0.05098); */
+    min-width: 45px;
+    min-height: 45px;
+    max-width: 45px;
+    max-height: 45px;
+  }
+  .person-icon-div {
+    margin: 3% 10px 0 10px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    height: 40px;
+    border-radius: 40px;
+    overflow: hidden;
+    object-fit: inherit;
+    width: inherit;
+    border-color: rgba(0, 0, 0, 0.05098);
+    border-width: 0px;
+    border-style: solid;
+    padding: 0;
+    background-color: rgba(0, 0, 0, 0.05098);
+    min-width: 45px;
+    min-height: 45px;
+    max-width: 45px;
+    max-height: 45px;
+  }
+  .icon-person {
+    font-size: 3rem;
+    padding: 4px 0px 0px 7.3px;
+    margin: 0px 0px 0px 0px;
+  }
+  .divImageView {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  .inageView {
+    display: block;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 10%;
+    border-radius: 5px;
+    -webkit-transition: width 0.25s;
+    -moz-transition: width 0.25s;
+    -o-transition: width 0.25s;
+    transition: width 0.25s;
+  }
+  .inageViewgrow {
+    width: 80%;
+  }
+  .inageViewClose {
+    width: 0%;
+  }
+  .name-person {
+    direction: rtl;
+    color: rgb(68, 68, 68);
+  }
+  .div-name-person {
+    max-width: 50vw;
+    display: inherit;
+    margin: 6% -5px 0 -5px;
+    font-size: 1.5rem;
+    font-style: oblique;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .iconFollowLtr {
+    float: left;
+    margin: 5% -5% 0px 0%;
+  }
+  .iconFollowRtl {
+    /* float: right ; */
+    direction: rtl;
+    margin: 5% 3% 0px 4%;
+  }
+  .display {
+    display: none;
+  }
+  .divLoaderMoreResult {
+    /* margin-top: 5px !important; */
+  }
+  .fade-in {
+    animation: fadeIn ease 2s;
+    -webkit-animation: fadeIn ease 2s;
+    -moz-animation: fadeIn ease 2s;
+    -o-animation: fadeIn ease 2s;
+    -ms-animation: fadeIn ease 2s;
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  @-moz-keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  @-webkit-keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  @-o-keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  @-ms-keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+}
+
+/* ================================================================================================================ */
+
+/* for computer */
+@media screen and (min-width: 600px) {
+  .iconsFontsPlus {
+    color: rgb(75, 112, 100);
+    font-size: 2rem;
+    -webkit-transition: color 1s, font-size 1s;
+    -moz-transition: color 1s, font-size 1s;
+    -o-transition: color 1s, font-size 1s;
+    transition: color 1s, font-size 1s;
+  }
+  .iconsFontsPlus:hover {
+    color: rgb(118, 155, 143);
+    font-size: 2.1rem;
+  }
+  .iconsFontsV {
+    color: rgb(52, 66, 255);
+    font-size: 2rem;
+    -webkit-transition: color 1s, font-size 1s;
+    -moz-transition: color 1s, font-size 1s;
+    -o-transition: color 1s, font-size 1s;
+    transition: color 1s, font-size 1s;
+  }
+  .iconsFontsV:hover {
+    color: rgb(107, 116, 255);
+    font-size: 2.1rem;
+  }
+
+  .main-div-follow {
+    background-color: rgb(251, 255, 250);
+    height: 100vh;
+    width: 100vw;
+    padding-top: 13rem;
+  }
+  .rtl {
+    float: right;
+  }
+  .ltr {
+    float: left;
+  }
+  .div-person-follow {
+    width: 700px;
+    margin: 0 auto;
+    min-height: 70px;
+    background-color: white;
+    border: 0.5px solid rgb(241, 250, 238);
+    border-radius: 8px;
+    margin-bottom: 7px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05),
+      0 0.5px 2px 0 rgba(0, 0, 0, 0.05);
+  }
+
+  .img-person-follow {
+    margin: 20% 10px 0 10px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    height: 42px;
+    border-radius: 40px;
+    overflow: hidden;
+    object-fit: inherit;
+    width: inherit;
+    border-color: rgba(0, 0, 0, 0.05098);
+    border-width: 1px;
+    border-style: solid;
+    padding: 0;
+    background-color: rgba(0, 0, 0, 0.05098);
+    min-width: 45px;
+    min-height: 45px;
+    max-width: 45px;
+    max-height: 45px;
+  }
+  .person-icon-div {
+    margin: 3% 10px 0 10px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    height: 42px;
+    border-radius: 40px;
+    overflow: hidden;
+    object-fit: inherit;
+    width: inherit;
+    border-color: rgba(0, 0, 0, 0.05098);
+    border-width: 1px;
+    border-style: solid;
+    padding: 0;
+    background-color: rgba(0, 0, 0, 0.05098);
+    min-width: 45px;
+    min-height: 45px;
+    max-width: 45px;
+    max-height: 45px;
+  }
+  .icon-person {
+    font-size: 3rem;
+    padding: 4px 0px 0px 7.3px;
+    margin: 0px 0px 0px 0px;
+  }
+  .divImageView {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  .inageView {
+    display: block;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 10%;
+    border-radius: 5px;
+    -webkit-transition: width 0.25s;
+    -moz-transition: width 0.25s;
+    -o-transition: width 0.25s;
+    transition: width 0.25s;
+  }
+  .inageViewgrow {
+    width: 30%;
+  }
+  .inageViewClose {
+    width: 0%;
+  }
+  .name-person {
+    direction: rtl;
+    color: rgb(68, 68, 68);
+  }
+  .name-person:hover {
+    color: blue !important;
+  }
+  .div-name-person {
+    max-width: 50vw;
+    display: inherit;
+    margin: 3.5% -5px 0 -5px;
+    font-size: 1.5rem;
+    font-style: oblique;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .iconFollowLtr {
+    border: 0px solid white !important;
+    float: left;
+    margin: 3.5% -5% 0px 0%;
+  }
+  .iconFollowRtl {
+    border: 0px solid white !important;
+    direction: rtl;
+    margin: 3.5% 3% 0px 4%;
+  }
+  .display {
+    display: none;
+  }
+  .fade-in {
+    animation: fadeIn ease 2s;
+    -webkit-animation: fadeIn ease 2s;
+    -moz-animation: fadeIn ease 2s;
+    -o-animation: fadeIn ease 2s;
+    -ms-animation: fadeIn ease 2s;
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  @-moz-keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  @-webkit-keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  @-o-keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  @-ms-keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+}

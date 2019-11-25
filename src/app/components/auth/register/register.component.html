@@ -1,0 +1,224 @@
+<body class="p-5">
+  <div class="main-div-auth">
+    <div
+      [ngStyle]="{
+        backgroundColor: userAddImage ? 'rgb(251, 255, 250)' : '',
+        border: userAddImage ? '0px' : ''
+      }"
+      class="box-auth pt-2"
+    >
+      <app-header-auth class="header-auth"></app-header-auth>
+      <div *ngIf="!userAddImage">
+        <div class="div-text">
+          <p class="text-follw">
+            {{ wordsCantent.ContentLoginRegister.TitleRegister }}
+          </p>
+        </div>
+        <form
+          [formGroup]="registerForm"
+          (ngSubmit)="onNextregisterForm()"
+          class="form-auth"
+        >
+          <div>
+            <input
+              [ngClass]="{
+                rtl: wordsCantent.ContentLoginRegister.direction == 'rtl'
+              }"
+              class="input-auth fontSize "
+              type="text"
+              id="userEmail"
+              formControlName="userEmail"
+              [placeholder]="wordsCantent.PlaceHoldersRegister.Email"
+            /><br />
+            <small
+              *ngIf="
+                !registerForm.get('userEmail').valid &&
+                registerForm.get('userEmail').touched
+              "
+              id="userDanger"
+              class="text-danger"
+            >
+              {{ wordsCantent.ContentLoginRegister.RequiredFieldEmail }}
+            </small>
+          </div>
+          <div>
+            <input
+              [ngClass]="{
+                rtl: wordsCantent.ContentLoginRegister.direction == 'rtl'
+              }"
+              class="input-auth fontSize "
+              type="text"
+              id="userFullName"
+              formControlName="userFullName"
+              [placeholder]="wordsCantent.PlaceHoldersRegister.FullName"
+            />
+          </div>
+          <div>
+            <input
+              [ngClass]="{
+                rtl: wordsCantent.ContentLoginRegister.direction == 'rtl'
+              }"
+              class="input-auth fontSize "
+              type="text"
+              id="username"
+              formControlName="userName"
+              [placeholder]="wordsCantent.PlaceHoldersRegister.UserName"
+            />
+            <br />
+            <small
+              *ngIf="
+                !registerForm.get('userName').valid &&
+                registerForm.get('userName').touched
+              "
+              id="userDanger"
+              class="text-danger"
+            >
+              {{ wordsCantent.ContentLoginRegister.RequiredField }}
+            </small>
+          </div>
+          <div>
+            <input
+              [ngClass]="{
+                rtl: wordsCantent.ContentLoginRegister.direction == 'rtl'
+              }"
+              class="input-auth fontSize "
+              type="password"
+              id="password"
+              formControlName="password"
+              [placeholder]="wordsCantent.PlaceHoldersRegister.Password"
+            />
+            <br />
+            <small
+              *ngIf="
+                !registerForm.get('password').valid &&
+                registerForm.get('password').touched
+              "
+              id="userDanger"
+              class="text-danger"
+            >
+              {{ wordsCantent.ContentLoginRegister.RequiredField }}
+            </small>
+          </div>
+          <div *ngIf="!loader">
+            <button
+              [disabled]="!registerForm.valid"
+              [ngStyle]="{
+                'background-color': !registerForm.valid
+                  ? 'rgb(132, 173, 235)'
+                  : '#3897f0'
+              }"
+              class="button-auth fontSize"
+            >
+              {{ wordsCantent.ContentLoginRegister.ButoonRegister }}
+            </button>
+          </div>
+          <div *ngIf="loader">
+            <app-loader></app-loader>
+          </div>
+          <div *ngIf="authField">
+            <br />
+            <small id="" class="text-danger">
+              {{ massageForUser }}
+            </small>
+          </div>
+          <hr />
+          <div class="p-4">
+            <p class="fontSize">
+              {{ wordsCantent.ContentLoginRegister.ApprovalOfTermsOfUse }}
+              <a class="aPoynter fontSize"
+                ><p class="pPoynter">
+                  {{ wordsCantent.ContentLoginRegister.TermsOfUseButton }}
+                </p></a
+              >
+            </p>
+          </div>
+        </form>
+        <div class="box-auth mt-3 p-2">
+          <p class="text-center p-2 m-2 fontSize">
+            {{ wordsCantent.ContentLoginRegister.HaveAnAccountRegister }}
+            <a [routerLink]="['/login']">
+              {{ wordsCantent.ContentLoginRegister.ButtonRegister }}
+            </a>
+          </p>
+        </div>
+        <div class="box-auth mt-3 p-2">
+          <p class="text-center p-2 m-2 fontSize">
+            {{ wordsCantent.ContentLoginRegister.ToViewWithoutRegistration }}
+            <a [routerLink]="['/register']">
+              {{ wordsCantent.ContentLoginRegister.ButtonClicHere }}
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="userAddImage" class="style fade-in">
+      <div *ngIf="!loaderImage">
+        <h6 class="mt-3">{{ wordsCantent.ContentLoginRegister.OnAddImage }}</h6>
+        <form [formGroup]="addImageForm" (ngSubmit)="onAddImageForm()">
+          <div>
+            <button
+              class="mt-3 btn btn-primary"
+              type="button"
+              (click)="filePicker.click()"
+            >
+              {{ wordsCantent.ContentLoginRegister.ButoonSelectImage }}
+            </button>
+            <input
+              class="form-control d-none"
+              type="file"
+              accept="image/png,image/gif,image/jpeg,image/jpg"
+              #filePicker
+              (change)="onImagePicked($event)"
+            />
+          </div>
+          <div
+            class="mt-3 div-image-preview"
+            *ngIf="
+              imageValid &&
+              imagePreview !== '' &&
+              imagePreview &&
+              addImageForm.get('imageUser').valid
+            "
+          >
+              <img
+                class="image-preview"
+                [src]="imagePreview"
+                [alt]="addImageForm.value.title"
+              />
+          </div>
+          <div>
+            <div *ngIf="!imagePreview || !imageValid">
+              <a (click)="SkipImage()" class="mt-5 btn btn-light">{{
+                wordsCantent.ContentLoginRegister.SkipImage
+              }}</a>
+            </div>
+            <div
+              *ngIf="
+                imageValid &&
+                imagePreview !== '' &&
+                imagePreview &&
+                addImageForm.get('imageUser').valid
+              "
+            >
+              <button type="submit" class=" mt-3 btn btn-primary btn-lg">
+                {{ wordsCantent.ContentLoginRegister.SendImageUser }}
+              </button>
+            </div>
+          </div>
+        </form>
+        <div class="mt-4" *ngIf="errorImageMassage">
+          <h6 class="text-danger">
+            {{ wordsCantent.ContentLoginRegister.errorImg }}
+          </h6>
+        </div>
+      </div>
+
+      <div *ngIf="loaderImage">
+        <app-loader></app-loader>
+      </div>
+    </div>
+
+    <app-footer-auth *ngIf="!userAddImage"></app-footer-auth>
+  </div>
+</body>
